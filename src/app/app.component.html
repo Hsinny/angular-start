@@ -28,12 +28,23 @@
           <img src="/assets/images/logo.png" class="pull-left logo" alt="The Will Will Web">
 
           <div class="pull-left">
-            <h1><a href="http://blog.miniasp.com/">The Will Will Web</a></h1>
-            <h3>記載著 Will 在網路世界的學習心得與技術分享</h3>
+            <!-- {{內嵌繫結}} -->
+            <h1><a href="{{url}}">{{title}}</a></h1>
+            <!-- on-事件繫結1 -->
+            <h3 on-click="changeEventTitle()">{{subtitle}}</h3>
+            <!-- (事件繫結2) -->
+            <h3 (click)="changeEvnetSubtitle()">{{thirdTitle}}</h3>
+            <!-- (事件繫結3)傳入$event參數 -->
+            <h3 (click)="changeEventThirdTitle($event)">{{thirdTitle}}</h3>
+            <!-- (事件繫結4)傳入$event參數 -->
+            <h3 (click)="changeEventFourthTitle($event)">{{thirdTitle}}</h3>
+            <!-- (事件繫結5)傳入$event參數及屬性 -->
+            <h3 (click)="changeEventFivthTitle($event.altKey)">{{thirdTitle}}</h3>
           </div>
 
           <div id="social-icons" class="pull-right social-icon">
-            <a href="https://www.facebook.com/will.fans" title="Will 保哥的技術交流中心" target="_blank">
+             <!-- [屬性繫結] [attr.自訂屬性繫結]-->
+            <a [href]="url" [title]="fbTitle" target="_blank" [attr.class]="class">
               <img src="/assets/images/facebook.png">
             </a>
             <a href="https://twitter.com/Will_Huang" title="@Will_Huang 保哥的推特" target="_blank">
