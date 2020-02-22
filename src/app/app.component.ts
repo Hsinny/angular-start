@@ -6,13 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'The Will Will Web';
-  subtitle = '記載著 Will 在網路世界的學習心得與技術分享';
-  thirdTitle = '記載著 Will 在網路世界的學習心得與技術分享';
-  url = 'http://blog.miniasp.com/';
-  fbUrl = 'https://www.facebook.com/will.fans';
-  fbTitle = 'Will 保哥的技術交流中心';
-  class = 'link';
   constructor() {
     setTimeout(() => {
       this.title = 'New Title';
@@ -23,6 +16,15 @@ export class AppComponent {
       this.title = 'Second Title';
     }, 4000);
   }
+  title = 'The Will Will Web';
+  subtitle = '記載著 Will 在網路世界的學習心得與技術分享';
+  thirdTitle = '記載著 Will 在網路世界的學習心得與技術分享';
+  url = 'http://blog.miniasp.com/';
+  fbUrl = 'https://www.facebook.com/will.fans';
+  fbTitle = 'Will 保哥的技術交流中心';
+  class = 'link';
+  wordsCount = 0;
+
   changeEventTitle() {
     this.subtitle = 'Event Title 1';
   }
@@ -49,5 +51,16 @@ export class AppComponent {
     if (altKey) {
       this.thirdTitle = 'Event Title 5';
     }
+  }
+
+  // 計算字數
+  keywordChange(keyword: string) {
+    this.wordsCount = keyword.length;
+  }
+
+  // 清空輸入
+  keywordReset(input: HTMLInputElement ) {
+    input.value = '';
+    this.wordsCount = input.value.length;
   }
 }
