@@ -24,6 +24,7 @@ export class AppComponent {
   fbTitle = 'Will 保哥的技術交流中心';
   class = 'link';
   wordsCount = 0;
+  keyword = '';
 
   changeEventTitle() {
     this.subtitle = 'Event Title 1';
@@ -62,5 +63,10 @@ export class AppComponent {
   keywordReset(input: HTMLInputElement ) {
     input.value = '';
     this.wordsCount = input.value.length;
+  }
+
+  // 使用雙向繫結清空輸入的文字
+  keywordReset2() {
+    this.keyword = '';
   }
 }
