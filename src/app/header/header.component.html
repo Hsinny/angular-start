@@ -32,6 +32,10 @@
         <h2 [ngStyle]="getStyle()">{{ counter }}</h2>
         <!-- Attritube directive 屬性指令 - ngStyle 寫法三 -->
         <h2 [style.font-size]="(12 + counter) + 'px'" [style.color]="'blue'">{{ counter }}</h2>
+        <!-- Attritube directive 屬性指令 - ngClass 寫法ㄧ -->
+        <h2 [ngClass]="{'d-none': (counter % 2 == 0)}">{{ title }}{{ counter }}</h2>
+        <!-- Attritube directive 屬性指令 - ngClass 寫法ㄧ -->
+        <h2 [class.d-none]="(counter % 2 == 1)">{{ counter }}{{ title }}</h2>
         <!-- {{內嵌繫結}} -->
         <h2><a href="{{url}}">{{title}}</a></h2>
         <!-- on-事件繫結1 -->
