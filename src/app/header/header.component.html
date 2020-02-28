@@ -24,10 +24,16 @@
   </div>
   <div class="title-wrapper">
     <div class="container">
-      <img src="/assets/images/logo.png" class="pull-left logo" alt="The Will Will Web">
+      <img (click)="addCount()" src="/assets/images/logo.png" class="pull-left logo" alt="The Will Will Web">
       <div class="pull-left">
+        <!-- Attritube directive 屬性指令 - ngStyle 寫法一 -->
+        <h1 [ngStyle]="{'font-size': 12+counter+'px', color: 'red'}">{{ counter }}</h1>
+        <!-- Attritube directive 屬性指令 - ngStyle 寫法二 -->
+        <h2 [ngStyle]="getStyle()">{{ counter }}</h2>
+        <!-- Attritube directive 屬性指令 - ngStyle 寫法三 -->
+        <h2 [style.font-size]="(12 + counter) + 'px'" [style.color]="'blue'">{{ counter }}</h2>
         <!-- {{內嵌繫結}} -->
-        <h1><a href="{{url}}">{{title}}</a></h1>
+        <h2><a href="{{url}}">{{title}}</a></h2>
         <!-- on-事件繫結1 -->
         <h3 on-click="changeEventTitle()">{{subtitle}}</h3>
         <!-- (事件繫結2) -->

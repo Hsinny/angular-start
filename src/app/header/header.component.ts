@@ -24,6 +24,7 @@ export class HeaderComponent implements OnInit {
    fbUrl = 'https://www.facebook.com/will.fans';
    fbTitle = 'Will 保哥的技術交流中心';
    class = 'link';
+   counter = 0;
 
   changeEventTitle() {
     this.subtitle = 'Event Title 1';
@@ -51,6 +52,17 @@ export class HeaderComponent implements OnInit {
     if (altKey) {
       this.thirdTitle = 'Event Title 5';
     }
+  }
+
+  addCount() {
+    this.counter ++;
+  }
+
+  getStyle() {
+    return {
+      'font-size': 12 + this.counter + 'px',
+      color: 'orange'
+    };
   }
 
   ngOnInit() {
