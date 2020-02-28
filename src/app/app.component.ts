@@ -11,6 +11,7 @@ export class AppComponent {
 
   wordsCount = 0;
   keyword = '';
+  counter = 0;
 
   // 計算字數
   keywordChange(keyword: string) {
@@ -26,5 +27,9 @@ export class AppComponent {
   // 使用雙向繫結清空輸入的文字
   keywordReset2() {
     this.keyword = '';
+  }
+
+  addCount() {
+    this.counter ++;
   }
 }

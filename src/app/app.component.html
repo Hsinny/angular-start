@@ -1,4 +1,4 @@
-    <app-header #tHeader></app-header>
+    <app-header #tHeader *ngIf="(counter % 2 == 0)"></app-header>
     <!-- CONTAINER START-->
     <section class="container" (click)="tHeader.title = 'change';">
       <div class="row">
@@ -7,7 +7,7 @@
           <div id="ctl00_cphBody_PostList1_posts" class="posts">
 
             <!-- Article START-->
-            <article class="post" id="post0">
+            <article (click)="addCount()" class="post" id="post0">
               <header class="post-header">
                 <h2 class="post-title">
                     <a href="http://blog.miniasp.com/post/2016/04/30/Visual-Studio-Code-from-Command-Prompt-notes.aspx">從命令提示字元中開啟 Visual Studio Code 如何避免顯示惱人的偵錯訊息</a>
